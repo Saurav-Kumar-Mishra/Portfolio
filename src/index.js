@@ -6,15 +6,12 @@ import reportWebVitals from "./reportWebVitals";
 import AppContextProvider from "./Components/AppContextProvider";
 import { ToastContainer } from "react-toastify";
 
-
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <AppContextProvider>
     <App />
     <ToastContainer />
   </AppContextProvider>
-  
 );
 
 // If you want to start measuring performance in your app, pass a function

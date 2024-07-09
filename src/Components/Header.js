@@ -4,17 +4,19 @@ import { CiLight } from "react-icons/ci";
 import { MdDarkMode } from "react-icons/md";
 import { AppContext } from "./AppContextProvider";
 import Menu from "./Menu";
+import './Header.css'
 
 function Header() {
-
-  const { darkMode, setDarkMode, colorMode, menuBar, setMenuBar,skillsRef,contactRef,aboutRef,projectsRef } =
+  const { darkMode, setDarkMode, menuBar, setMenuBar, skillsRef, contactRef, aboutRef, projectsRef } =
     React.useContext(AppContext);
   const [discardMenu, setDiscardMenu] = React.useState(false);
+
   function handleResize() {
     if (window.innerWidth >= 768) {
       setDiscardMenu(true);
     } else setDiscardMenu(false);
   }
+
   React.useEffect(() => {
     window.addEventListener("resize", handleResize);
     handleResize();
@@ -22,37 +24,40 @@ function Header() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
   const scrollToSection = (ref) => {
     ref.current.scrollIntoView({ behavior: "smooth" });
   };
+
   return (
     <>
       {menuBar ? (
-      <Menu />
+        <Menu />
       ) : (
         <div
-          style={colorMode}
-          className={`  w-screen ${!darkMode && "bg-[#102C57]"} flex justify-around items-center md:min-w-[768px] lg:w-screen lg:p-2  transition ease-in-out delay-1000`}
+       
+          className={`w-screen   p-4 fixed ${darkMode? "bg-[#1d1f1f] text-white" :" bg-[#1d1f1f]"} flex justify-around items-center z-30 static`}
         >
+       { !discardMenu && 
           <button onClick={() => setMenuBar((prev) => !prev)}>
-            {!discardMenu && <IoIosMenu />}
-          </button>
-          <div className=" text-pink-400 p-2 font-mono font-bold lg:text-xl animate-textGlow">
+            <IoIosMenu className="text-2xl" />
+          </button>}
+          <div className="text-[#FFBD39] text-xl font-serif font-bold lg:text-2xl">
             Portfolio
           </div>
           {discardMenu && (
-            <div className="flex lg:w-[25%] justify-between md:w-[35%]">
-               <button onClick={() => scrollToSection(aboutRef)}>About</button>
-              <button onClick={() => scrollToSection(skillsRef)}>Skills</button>
-              <button onClick={() => scrollToSection(projectsRef)}>Projects</button>
-              <button onClick={() => scrollToSection(contactRef)}>Contact Me!</button>
+            <div className="hidden  md:flex md:gap-4 lg:gap-6">
+              <button className="move-tabs hover:text-[#FFBD39] hover:underline hover:decoration-4 hover:underline-offset-[10px] hover:decoration-[#FFBD39]"  onClick={() => scrollToSection(aboutRef)}>About</button>
+              <button className="move-tabs hover:text-[#FFBD39] hover:underline hover:decoration-4 hover:underline-offset-[10px] hover:decoration-[#FFBD39] " onClick={() => scrollToSection(skillsRef)}>Skills</button>
+              <button className="hover:text-[#FFBD39] hover:underline hover:decoration-4 hover:underline-offset-[10px] hover:decoration-[#FFBD39]" onClick={() => scrollToSection(projectsRef)}>Projects</button>
+              <button className="hover:text-[#FFBD39] hover:underline hover:decoration-4 hover:underline-offset-[10px] hover:decoration-[#FFBD39]" onClick={() => scrollToSection(contactRef)}>Contact Me!</button>
             </div>
           )}
-          <div className="flex gap-5">
+          <div className="flex items-center gap-4">
             <a
               target="blank"
               href="https://drive.google.com/file/d/1cT-KpOME4MJd6OwLvFCb8xOohPxaXQN_/view?usp=sharing"
-              className="border-2  px-4 text-xs py-2 cursor-pointer rounded-xl hover:text-purple-600"
+              className="border-2 px-4 py-3 text-xs cursor-pointer rounded-full hover:bg-[#f5c566] bg-[#FFBD39] poppins-regular border-none text-black"
             >
               Get My Resume
             </a>

@@ -1,21 +1,53 @@
 import React from "react";
 import { IoIosMenu } from "react-icons/io";
+import { FaInfoCircle, FaTools, FaProjectDiagram, FaEnvelope } from "react-icons/fa";
 import { AppContext } from "./AppContextProvider";
 
 function Menu() {
-  const { setMenuBar,aboutRef,skillsRef,projectsRef,contactRef} = React.useContext(AppContext);
+  const { setMenuBar, aboutRef, skillsRef, projectsRef, contactRef } = React.useContext(AppContext);
+
   const scrollToSection = (ref) => {
     ref.current.scrollIntoView({ behavior: "smooth" });
-    setMenuBar((prev)=>!prev)
+    setMenuBar((prev) => !prev);
   };
+
   return (
-    <div className="absolute rounded-r-[50px] gap-5 md:w-[768px] bg-gray-400 text-white h-screen w-[212px] flex flex-col transition-all duration-500 ease-in-out">
-      <div className="flex flex-col p-4 gap-5 justify-start items-start font-mono text-black font-bold ">
-        <button onClick={()=>setMenuBar((prev)=>!prev)}><IoIosMenu /></button>
-        <button onClick={() => scrollToSection(aboutRef)}>About</button>
-              <button onClick={() => scrollToSection(skillsRef)}>Skills</button>
-              <button onClick={() => scrollToSection(projectsRef)}>Projects</button>
-              <button onClick={() => scrollToSection(contactRef)}>Contact Me!</button>
+    <div className="fixed top-0 left-0 h-full w-full md:w-[300px] bg-gray-800 text-white flex flex-col p-6 transition-all duration-500 ease-in-out z-50">
+      <button 
+        className="self-end text-2xl mb-4 text-white hover:text-gray-400" 
+        onClick={() => setMenuBar((prev) => !prev)}
+      >
+        <IoIosMenu />
+      </button>
+      <div className="flex flex-col gap-6 font-mono font-bold text-lg">
+        <button 
+          className="flex items-center gap-2 hover:text-purple-400 transition-colors duration-300" 
+          onClick={() => scrollToSection(aboutRef)}
+        >
+          <FaInfoCircle />
+          About
+        </button>
+        <button 
+          className="flex items-center gap-2 hover:text-purple-400 transition-colors duration-300" 
+          onClick={() => scrollToSection(skillsRef)}
+        >
+          <FaTools />
+          Skills
+        </button>
+        <button 
+          className="flex items-center gap-2 hover:text-purple-400 transition-colors duration-300" 
+          onClick={() => scrollToSection(projectsRef)}
+        >
+          <FaProjectDiagram />
+          Projects
+        </button>
+        <button 
+          className="flex items-center gap-2 hover:text-purple-400 transition-colors duration-300" 
+          onClick={() => scrollToSection(contactRef)}
+        >
+          <FaEnvelope />
+          Contact Me!
+        </button>
       </div>
     </div>
   );

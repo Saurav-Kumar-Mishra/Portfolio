@@ -5,7 +5,7 @@ const MovingText = () => {
 
   useEffect(() => {
     const addAndRemoveText = () => {
-      const textToDisplay = ' A web developer';
+      const textToDisplay = '  Full Stack Developer';
 
       let currentIndex = 0;
       let direction = 1; // 1 for adding, -1 for removing
@@ -17,17 +17,17 @@ const MovingText = () => {
           currentIndex++;
           if (currentIndex > textToDisplay.length) {
             direction = -1;
-            setTimeout(updateText, 1000); // Delay before removing
+            setTimeout(updateText, 2000); // Delay before removing
           } else {
-            setTimeout(updateText, 100); // Speed of adding
+            setTimeout(updateText, 200); // Speed of adding
           }
         } else {
           currentIndex--;
           if (currentIndex < 0) {
             direction = 1;
-            setTimeout(addAndRemoveText, 1000); // Delay before adding again
+            setTimeout(addAndRemoveText, 2000); // Delay before adding again
           } else {
-            setTimeout(updateText, 100); // Speed of removing
+            setTimeout(updateText, 200); 
           }
         }
       };
@@ -39,7 +39,7 @@ const MovingText = () => {
 
   }, []);
 
-  return <div className="text-xl lg:text-3xl font-bold text-center">{text}</div>;
+  return <div className="text-3xl lg:text-5xl font-bold   ">{text}</div>;
 };
 
 export default MovingText;

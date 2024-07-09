@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Concert+One&family=Poetsen+One&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.fadeIn {
+  animation: fadeIn 3s forwards 1s; 
+}
+.luckiest-guy-regular {
+  font-family: "Luckiest Guy", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+.poetsen-one-regular {
+  font-family: "Poetsen One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.concert-one-regular {
+  font-family: "Concert One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; /* Start with opacity set to 0 (fully transparent) */
+  }
+  100% {
+    opacity: 1; /* End with opacity set to 1 (fully opaque) */
+  }
+}
+
+.slideIn{  
+  
+  animation: slideIn 1s ease-in 500ms; 
+
+}
+@keyframes slideIn {
+  0% {
+    translate: -300px;
+    opacity: 0;
+  }
+  100% {
+    translate:0px
+  }
+}
+
+.blue-shadow{
+  box-shadow: 10px 10px 10px 2px rgb(255, 253, 208) ,5px 5px 5px green ;
+  transform:  rotateZ(-3deg);
+  background-color:white;
+}
+.bounce:hover{
+  animation: bounce 2s ease-in-out 100ms infinite;
+  
+ 
+}
+.bounce{
+  filter:drop-shadow(0px 0px 10px #FFBD39);
+}
+@keyframes bounce {
+
+  0%{
+    translate: 0px -0.5px ;
+  }
+  50%{
+    translate: 0px 10px;
+  }
+  100%{
+    translate: 0px 0px;
+  }
+
+}
+.poppins-thin {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+
+.poppins-light {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+
+
+.poppins-black {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.poppins-light-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.poppins-regular-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+

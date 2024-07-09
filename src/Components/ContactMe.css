@@ -1,0 +1,56 @@
+.poetsen-one-regular {
+  font-family: "Poetsen One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.button {
+  border: none;
+  display: block;
+  cursor: pointer;
+  text-transform: uppercase;
+  outline: none;
+  overflow: hidden;
+  position: relative;
+  color: black;
+  font-weight: 600;
+  font-size: 15px;
+  background-color: #FFBD39;
+  padding: 15px 50px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.button:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: #ffe851;
+  transition: all 1s ease-in-out;
+  transform: translateX(-100%) ;
+
+  
+}
+.button:hover::after {
+  transform: translateX(0%);
+  z-index: -1;
+
+
+}
+.contact-img{
+  filter: drop-shadow(-10px -5px 5px#FFBD39);
+  animation: move 2s ease-in-out 100ms infinite;
+}
+@keyframes move {
+  0%{
+    translate:0px;
+  }
+  50%{
+    translate: 10px;
+  }
+  100%{
+    translate: 0px;
+  }
+}

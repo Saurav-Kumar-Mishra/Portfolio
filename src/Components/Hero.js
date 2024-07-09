@@ -1,70 +1,85 @@
 import React from "react";
 import MovingText from "./MovingText";
-import { FaLinkedin } from "react-icons/fa";
-import { FaSquareInstagram } from "react-icons/fa6";
+import { FaLinkedin, FaGithub, FaTelegram } from "react-icons/fa";
+import { FaSquareInstagram, FaXTwitter } from "react-icons/fa6";
 import { AppContext } from "./AppContextProvider";
 
-function Hero() {
-  const { darkMode, colorMode, aboutRef } = React.useContext(AppContext);
-  const [imgSrc, setImgSrc] = React.useState("./sk.jpeg");
-  function handleResize() {
-    if (window.innerWidth >= 768) {
-      darkMode ? setImgSrc("./skfull.jpeg") : setImgSrc("./sk1.jpeg");
-    } 
-    else 
-   { setImgSrc("./sk.jpg");}
-  }
+import "./Hero.css";
 
-  React.useEffect(() => {
-    window.addEventListener("resize", handleResize);
-    handleResize();
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [darkMode]);
+function Hero() {
+  const { darkMode, aboutRef } = React.useContext(AppContext);
+
   return (
-    <div
-      ref={aboutRef}
-      style={colorMode}
-      className="p-4 bg-[#000000] md:flex md:gap-5 md:justify-center  md:w-screen md:p-6 lg:w-screen w-[412px] lg:flex lg:justify-around lg:items-center"
-    >
-      <div
-        className={`rounded-lg  ${
-          darkMode
-            ? "bg-gradient-to-b from-[#080808] to-[#06062d]"
-            : "bg-gradient-to-b from-[#6fbfcf] to-[#ffffff]"
-        }`}
-      >
-        <img
-          className="rounded-[50%] lg:w-[600px] lg:rounded-[50%]  p-2 w-full "
-          src={imgSrc}
-          alt="failed to load profile pic"
-        />
-      </div>
-      <div className="text-center mt-3 lg:w-[34%]">
-        <p className="text-center text-2xl p-2 pb-0 font-bold lg:text-5xl md:text-xl">
-          Saurav Kumar Mishra
-        </p>
-        <p className="text-pink-400 h-12 flex items-center font-sans md:flex md:items-baseline  md:h-fit lg:text-3xl lg:h-fit flex justify-center gap-4">
-          <span>I'm </span>
-          <MovingText />
-        </p>
-        <p className=" text-xl font-extrabold lg:mt-6 md:mt-4">About ME</p>
-        <p className="text-justify mt-2 text-sm lg:text-lg">
-          I'm a Btech CSE student and Passionate about crafting captivating
-          digital experiences and driven by a relentless curiosity for
-          innovative design and web development.
-        </p>
-        <div className="mt-4 flex flex-col item-center justify-center gap-5">
-          <p className="font-bold">Follow Me On</p>
-          <p className="text-2xl flex justify-center gap-4 lg:text-4xl">
-            <a href="https://www.linkedin.com/in/sauravkrmishra">
+    <div ref={aboutRef} className={`container mx-auto p-4`}>
+      <div className="Hero-container flex flex-col  md:flex-row md:justify-center md:items-center md:gap-16 lg:h-screen lg:justify-evenly">
+        <div className="Left-Hero-Section w-full md:w-1/2 lg:w-1/3 mx-auto">
+          <div className="blue-shadow mt-4 mb-10 mx-auto w-full max-w-xs lg:max-w-sm relative ">
+            <img
+              src="sk1.png"
+              alt="designer"
+              className="rounded-2xl w-full bg-hero-pattern bg-cover  blue-shadow  animate-zoom1"
+            />
+            <img src="design.png" className="absolute  -top-20 -z-10 lg:animate-zoom2 md:w-[400px] "  alt="pic bg "/>
+          </div>
+        </div>
+        <div className="Right-Hero-Section p-2 flex flex-col gap-5 w-full md:w-1/2 lg:w-1/2">
+          <div className="Headings">
+            <div className="text-xl text-[#FFBD39] font-bold concert-one-regular lg:text-xl">
+              HELLO!
+            </div>
+            <h1 className="text-3xl bg-gradient-to-r from-violet-50 to-fuchsia-500 bg-clip-text text-transparent font-bold  lg:text-5xl">
+              <span className={` text-md ${darkMode?"text-black":"text-white"}`}>I'm </span>
+              <span className="text-[#FFBD39]"> Saurav </span>
+              <p className="text-[#FFBD39]">Mishra</p>
+            </h1>
+            <h4 className="flex gap-4 items-center h-[30px] mt-2 lg:mt-8">
+              <MovingText />
+            </h4>
+          </div>
+          <div className="About-Me mt-5 text-white  text-justify pr-2 a fadeIn">
+            <p className="text-[#FFBD39] poppins-regular-italic lg:text-[18px]">
+              Aspiring Full Stack Developer | Computer Science Student at MAIT
+            </p>   
+            <p className={`poppins-thin ${darkMode?"text-black poppins-regular" : "text-white"}`}>
+              Passionate about building dynamic and responsive web applications.
+              Currently honing my skills in both front-end and back-end
+              technologies to create seamless and user-friendly digital
+              experiences. Explore my projects and get in touch to collaborate
+              on innovative solutions!
+            </p>
+          </div>
+          <div className="Social-Media-Handles flex justify-start gap-5 mt-5">
+            <a
+              className="lg:text-5xl md:text-3xl text-2xl bounce rounded-full"
+              href="https://www.linkedin.com/in/sauravkrmishra"
+            >
               <FaLinkedin />
             </a>
-            <a href="https://www.instagram.com/sauravkmishra?igsh=aWp4djZwaTMxMjJo">
+            <a
+              className="lg:text-5xl md:text-3xl text-2xl bounce rounded-full"
+              href="https://www.instagram.com/sauravkmishra?igsh=aWp4djZwaTMxMjJo"
+            >
               <FaSquareInstagram />
             </a>
-          </p>
+            <a
+              className="lg:text-5xl md:text-3xl text-2xl bounce rounded-full"
+              href="https://t.me/SauravKrMishra"
+            >
+              <FaTelegram />
+            </a>
+            <a
+              className="lg:text-5xl md:text-3xl text-2xl bounce rounded-full"
+              href="https://github.com/Saurav-Kumar-Mishra"
+            >
+              <FaGithub />
+            </a>
+            <a
+              className="lg:text-5xl md:text-3xl text-2xl bounce rounded-full"
+              href="https://www.twitter.com/ImSauravKMishra"
+            >
+              <FaXTwitter />
+            </a>
+          </div>
         </div>
       </div>
     </div>

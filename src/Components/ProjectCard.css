@@ -1,0 +1,15 @@
+/* .marque{
+animation: move 10s linear 100ms infinite ;
+}
+@keyframes move {
+  0%{
+    translate: 0px 0px;
+  }
+  40%{
+    translate: 300px 0px;
+  }
+  80%{
+    translate: -300px 0px;
+  }
+
+} */
