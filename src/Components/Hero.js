@@ -10,16 +10,16 @@ function Hero() {
   const { darkMode, aboutRef } = React.useContext(AppContext);
 
   return (
-    <div ref={aboutRef} className={`container mx-auto p-4`}>
-      <div className="Hero-container flex flex-col  md:flex-row md:justify-center md:items-center md:gap-16 lg:h-screen lg:justify-evenly">
+    <div ref={aboutRef} className={`container mx-auto p-4 `}>
+      <div className="Hero-container flex flex-col  md:flex-row md:justify-center md:items-center md:gap-16 lg:h-screen lg:justify-evenly pt-20">
         <div className="Left-Hero-Section w-full md:w-1/2 lg:w-1/3 mx-auto">
           <div className="blue-shadow mt-4 mb-10 mx-auto w-full max-w-xs lg:max-w-sm relative ">
             <img
               src="sk1.png"
               alt="designer"
-              className="rounded-2xl w-full bg-hero-pattern bg-cover  blue-shadow  animate-zoom1"
+              className="rounded-2xl w-[95%] bg-hero-pattern bg-cover  blue-shadow  animate-zoom1"
             />
-            <img src="design.png" className="absolute  -top-20 -z-10 lg:animate-zoom2 md:w-[400px] "  alt="pic bg "/>
+            <img src="design.png" className="absolute  -top-20 -z-10 lg:animate-zoom2 md:w-[350px] "  alt="pic bg "/>
           </div>
         </div>
         <div className="Right-Hero-Section p-2 flex flex-col gap-5 w-full md:w-1/2 lg:w-1/2">

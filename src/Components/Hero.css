@@ -49,9 +49,9 @@
 }
 
 .blue-shadow{
-  box-shadow: 10px 10px 10px 2px rgb(255, 253, 208) ,5px 5px 5px green ;
+  box-shadow: 10px 10px 10px 2px rgb(255, 253, 208) ;
   transform:  rotateZ(-3deg);
-  background-color:white;
+  /* background-color:white; */
 }
 .bounce:hover{
   animation: bounce 2s ease-in-out 100ms infinite;
