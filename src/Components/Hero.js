@@ -17,7 +17,7 @@ function Hero() {
             <img
               src="sk1.png"
               alt="designer"
-              className="rounded-2xl w-[95%] bg-hero-pattern bg-cover  blue-shadow  animate-zoom1"
+              className="rounded-2xl w-[100%] bg-hero-pattern bg-cover  blue-shadow  animate-zoom1"
             />
             <img src="design.png" className="absolute  -top-20 -z-10 lg:animate-zoom2 md:w-[350px] "  alt="pic bg "/>
           </div>
