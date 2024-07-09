@@ -56,7 +56,7 @@ function Header() {
           <div className="flex items-center gap-4">
             <a
               target="blank"
-              href="https://drive.google.com/file/d/1cT-KpOME4MJd6OwLvFCb8xOohPxaXQN_/view?usp=sharing"
+              href="https://drive.google.com/file/d/1K8G7B4wb1Tyr64RrNz1mXEYI9pd-AEp0/view?usp=sharing"
               className="border-2 px-4 py-3 text-xs cursor-pointer rounded-full hover:bg-[#f5c566] bg-[#FFBD39] poppins-regular border-none text-black"
             >
               Get My Resume
