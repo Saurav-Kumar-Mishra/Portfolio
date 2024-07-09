@@ -48,7 +48,7 @@ const handleSubmit = async (e) => {
         <img src='./contact.jpg' alt="Contact" width="400px" />
       )} */}
     <div style={colorMode} className="bg-black text-white p-8 mx-auto  w-[412px]">
-      <h2 className="text-2xl font-bold mb-4 text-center font-mono text-pink-400">Leave Your message here !</h2>
+      <h2 className="text-2xl font-bold mb-4 text-center font-mono text-orange-500">Leave Your message here !</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
           <label htmlFor="name" className="block mb-1">Name:</label>
